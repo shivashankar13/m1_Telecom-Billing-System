@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "ctype.h": "c",
+        "windows.h": "c",
+        "deleterecords.h": "c",
+        "unity.h": "c",
+        "unity_internals.h": "c",
+        "addrecords.h": "c"
+    }
+}
