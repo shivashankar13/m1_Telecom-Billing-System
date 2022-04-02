@@ -7,19 +7,19 @@
 
 void searchrecords()
 {
-	FILE *f;
-	char phonenumber[20];
+	FILE *file1;
+	char pn[20];
 	//int flag=1;
-	f=fopen("c:/file.ojs","rb+");
-	if(f==0)
+	file1=fopen("c:/file.ojs","rb+");
+	if(file1==0)
 		exit(0);
 	//fflush(stdin);
 	system("cls");
 	printf("Enter Phone Number to search in our database");
-	scanf("%4s", phonenumber);
-	while(fread(&s,sizeof(s),1,f)==1)
+	scanf("%4s", pn);
+	while(fread(&s,sizeof(s),1,file1)==1)
 	{
-		if(strcmp(s.phonenumber,phonenumber)==0)
+		if(strcmp(s.phonenumber,pn)==0)
 		{	system("cls");
 			printf(" Record Found ");
 			printf("\n\nPhonenumber: %s\nName: %s\nAmount: Rs.%0.2f\n",s.phonenumber,s.name,s.amount);
@@ -32,5 +32,5 @@ void searchrecords()
 		}
 	}
 	getch();
-	fclose(f);
+	fclose(file1);
 }
