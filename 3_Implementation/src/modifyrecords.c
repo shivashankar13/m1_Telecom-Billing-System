@@ -6,18 +6,18 @@
 #include"modifyrecords.h"
 void modifyrecords()
 {
-	FILE *f;
-	char phonenumber[20];
+	FILE *file1;
+	char pn[20];
 	long int size=sizeof(s);
-	if((f=fopen("c:/file.ojs","rb+"))==NULL)
+	if((file1=fopen("c:/file.ojs","rb+"))==NULL)
 		exit(0);
 	system("cls");
 	printf("Enter phone number of the subscriber to modify:");
-	scanf("%4[^\n]",phonenumber);
+	scanf("%4[^\n]",pn);
 	//fflush(stdin);
-	while(fread(&s,sizeof(s),1,f)==1)
+	while(fread(&s,sizeof(s),1,file1)==1)
 	{
-		if(strcmp(s.phonenumber,phonenumber)==0)
+		if(strcmp(s.phonenumber,pn)==0)
 		{
 			system("cls");
 			printf("\n Enter phone number:");
@@ -28,9 +28,9 @@ void modifyrecords()
 			printf("\n Enter amount: ");
 			scanf("%4f",&s.amount);
 			fseek(f,-size,SEEK_CUR);
-			fwrite(&s,sizeof(s),1,f);
+			fwrite(&s,sizeof(s),1,file1);
 			break;
 		}
 	}
-	fclose(f);
+	fclose(file1);
 } 

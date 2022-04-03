@@ -6,10 +6,10 @@
 #include"addrecords.h"
 void addrecords()
 {
-	FILE *f;
+	FILE *file1;
 	f=fopen("c:/file.ojs","ab+");
-	if(f==0)
-	{   f=fopen("c:/file.ojs","wb+");
+	if(file1==0)
+	{   file1=fopen("c:/file.ojs","wb+");
 		system("cls");
 		printf("please wait while we configure your computer");
 		printf("/npress any key to continue");
@@ -23,7 +23,7 @@ void addrecords()
 	/**	if (sizeof(&s.phonenumber)!=10)
 	{
 		printf("Mobile Numebr length should be 10 digits.");
-			fclose(f);
+			fclose(file1);
 			system("cls");
 			printf("\nAny key to continue");
 			getch();
@@ -34,15 +34,15 @@ void addrecords()
 		
 		printf("\n Enter amount:");
 		scanf("%f",&s.amount);
-		fwrite(&s,sizeof(s),1,f);
+		fwrite(&s,sizeof(s),1,file1);
 		//fflush(stdin);
 		system("cls");
 		printf("1 record successfully added");
 		printf("\n Press esc key to exit, any other key to add other record:");
-		char test;
-		test=getche();
-		if(test==27)
+		char t;
+		t=getche();
+		if(t==27)
 			break;
 	}
-	fclose(f);
+	fclose(file1);
 }
